@@ -3,5 +3,5 @@
 ---
 
 ## To do
-* make files whose name starts with numbers to move to only one directory
-* make files whose name starts with Hangul to move therepresentative character 
+<strike>* make files whose name starts with numbers to move to only one directory</strike>
+<strike>* make files whose name starts with Hangul to move the representative character</strike>
