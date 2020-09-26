@@ -51,7 +51,7 @@ def classify(abs_path, script_name):
                 dest_dir = os.path.join(abs_path, f[0].upper())
             elif f[0] >= '0' and f[0] <= '9':
                 dest_dir = os.path.join(abs_path, "0")
-            elif f[0] >= "가" and f[0] >= "힣":
+            elif f[0] >= "가" and f[0] <= "힣":
                 dest_dir = os.path.join(abs_path, hangul_dir(f[0]))
             else:
                 dest_dir = os.path.join(abs_path, "_")
