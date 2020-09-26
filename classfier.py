@@ -26,7 +26,7 @@ def classify(abs_path, script_name):
             print("File, %s has moved to directory, %s." % (src_file, dest_dir))
 
 if __name__ == "__main__":
-    #if len(sys.argv) == 1:
-        #classify(os.getcwd(), sys.argv[0])
-    #elif len(sys.argv) > 2:
-        #classify(os.path.abspath(sys.argv[1]), sys.argv[0])
+    if len(sys.argv) == 1:
+        classify(os.getcwd(), sys.argv[0])
+    elif len(sys.argv) > 2:
+        classify(os.path.abspath(sys.argv[1]), sys.argv[0])
