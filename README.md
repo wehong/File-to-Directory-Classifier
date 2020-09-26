@@ -11,8 +11,11 @@
 
 ## 사용법
 * 정리가 필요한 디렉토리에 본 파이썬 스크립트를 복사해서 실행
-> python classifier.py
+```
+python classifier.py
+```
 
 * 또는 정리가 필요한 디렉토리의 절대/상대 경로를 파라미터로 지정하여 실행
-> python classifier.py ../tmp/log
-
+```
+python classifier.py ../tmp/log
+```
