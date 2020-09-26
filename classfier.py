@@ -24,6 +24,7 @@ def classify(abs_path, script_name):
                     quit()
             shutil.move(src_file, dest_dir)
             print("File, %s has moved to directory, %s." % (src_file, dest_dir))
+    print("Classifying is finished.")
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
