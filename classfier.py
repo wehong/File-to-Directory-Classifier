@@ -36,6 +36,7 @@ def classify(abs_path, script_name):
     # get file-list in specifed directory with absolute path string
     try:
         files = os.listdir(abs_path)
+        print(files)
     except FileNotFoundError:
         print("Error - %s does not exist!" % abs_path)
         quit()
@@ -43,7 +44,8 @@ def classify(abs_path, script_name):
     print("Start classifying...\n")
 
     for f in files:
-        if os.path.isfile(f) and f != script_name and not f.startswith("."):
+        af = os.path.join(abs_path, f)
+        if os.path.isfile(af) and f != script_name and not f.startswith("."):
 
             # make src, dest string
             src_file = os.path.join(abs_path, f)
@@ -74,5 +76,7 @@ def classify(abs_path, script_name):
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         classify(os.getcwd(), sys.argv[0])
+        #print(os.getcwd())
     elif len(sys.argv) >= 2:
         classify(os.path.abspath(sys.argv[1]), sys.argv[0])
+        #print(os.path.abspath(sys.argv[1]))
