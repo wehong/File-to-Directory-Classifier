@@ -74,5 +74,5 @@ def classify(abs_path, script_name):
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         classify(os.getcwd(), sys.argv[0])
-    elif len(sys.argv) > 2:
+    elif len(sys.argv) >= 2:
         classify(os.path.abspath(sys.argv[1]), sys.argv[0])
