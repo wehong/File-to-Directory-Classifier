@@ -38,7 +38,7 @@ def classify(abs_path, script_name):
         files = os.listdir(abs_path)
         print(files)
     except FileNotFoundError:
-        print("Error - %s does not exist!" % abs_path)
+        print("Error - \'%s\' does not exist!" % abs_path)
         quit()
 
     print("Start classifying...\n")
@@ -61,22 +61,20 @@ def classify(abs_path, script_name):
             # make dest directory or use existing one
             try:
                 os.mkdir(dest_dir)
-                print("Directory %s is made.\n" % dest_dir)
+                print("Directory \'%s\' is made.\n" % dest_dir)
             except FileExistsError:
                 if not os.path.isdir(dest_dir):
-                    print("Error - Destination directory %s exists but not a directory!\n" % dest_dir)
+                    print("Error - Destination directory \'%s\' exists but it is not a directory!\n" % dest_dir)
                     quit()
             
             # move file to dest directory
             shutil.move(src_file, dest_dir)
-            print("File, %s has moved to directory, %s." % (f, dest_dir))
+            print("\'%s\' has moved to directory \'%s\'.\n" % (f, dest_dir))
             
-    print("Classifying is finished.")
+    print("Classifying is finished.\n")
 
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         classify(os.getcwd(), sys.argv[0])
-        #print(os.getcwd())
     elif len(sys.argv) >= 2:
         classify(os.path.abspath(sys.argv[1]), sys.argv[0])
-        #print(os.path.abspath(sys.argv[1]))
