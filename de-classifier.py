@@ -12,8 +12,8 @@ def declassify(abs_path):
     print("Start de-classifying...\n")
     
     for f in files:
-        if os.path.isdir(f) and not f.startswith("."):
-            tgt_dir = os.path.join(abs_path, f)
+        tgt_dir = os.path.join(abs_path, f)
+        if os.path.isdir(tgt_dir) and not f.startswith("."):
             files_in_tgtdir = os.listdir(tgt_dir)
             for fit in files_in_tgtdir:
                 tgt = os.path.join(tgt_dir, fit)
@@ -27,5 +27,8 @@ def declassify(abs_path):
 if __name__ == "__main__":
     if len(sys.argv) == 1:
         declassify(os.getcwd())
-    elif len(sys.argv) >= 2:
+    elif len(sys.argv) == 2:
         declassify(os.path.abspath(sys.argv[1]))
+    else:
+        print("Error. Improper number of parameters.")
+        print("Usage: \'python %s\' or \'python %s <directory>\'" % (sys.argv[0], sys.argv[0]))
